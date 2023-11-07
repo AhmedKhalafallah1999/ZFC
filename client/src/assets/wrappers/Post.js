@@ -14,8 +14,10 @@ const Wrapper = styled.article`
     align-items: center;
   }
   .main-icon {
-    width: 100px;
+    width: fit-content;
+    padding: 1rem;
     height: 40px;
+    
     display: grid;
     place-items: center;
     background: var(--primary-500);

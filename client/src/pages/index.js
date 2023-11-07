@@ -1,7 +1,7 @@
 export { default as Adimn } from "./Admin";
 export { default as AllFans } from "./AllFans";
 export { default as DashboardLayout } from "./DashboardLayout";
-export { default as DeletePost } from "./DeletePost";
+// export { default as DeletePost } from "./DeletePost";
 export { default as EditPost } from "./EditPost";
 export { default as Error } from "./Error";
 export { default as FansPosts } from "./FansPosts";

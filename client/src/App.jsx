@@ -19,6 +19,7 @@ import { loader as LoaderCurrentUser } from "./pages/DashboardLayout";
 import { action as ActionAddPost } from "./pages/AddPost";
 import { loader as LoaderEditPost } from "./pages/EditPost";
 import { action as ActionUpdatePost } from "./pages/EditPost";
+import { action as ActionDeletePost } from "./pages/DeletePost";
 import "./App.css";
 const router = createBrowserRouter([
   {
@@ -60,8 +61,8 @@ const router = createBrowserRouter([
             element: <Profile />,
           },
           {
-            path: "delete-post",
-            // element: <DeletePost />,
+            path: "delete-post/:id",
+            action: ActionDeletePost,
           },
           {
             path: "edit-post/:id",

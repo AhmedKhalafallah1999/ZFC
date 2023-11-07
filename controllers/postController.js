@@ -46,10 +46,6 @@ export const editPost = async (req, res) => {
 };
 export const deletePost = async (req, res) => {
   const { id } = req.params;
-  const userPost = await PostModel.findById(id);
-  if (!userPost)
-    // return res.status(StatusCodes.NO_CONTENT).json({ msg: "Not valid Id" });
-    throw new NotFoundError("There is no Post for this Id");
   const newPosts = await PostModel.deleteOne({ _id: id });
   res.status(StatusCodes.OK).json({ msg: "Post Deleted", newPosts });
 };

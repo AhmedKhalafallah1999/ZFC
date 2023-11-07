@@ -12,7 +12,7 @@ const Post = ({
   name,
   bio,
   fromWhen = "",
-  forDisabled = "",
+  forDisabled = false,
 }) => {
   const date = day(createdAt).format("MMM Do, YYYY");
   return (
@@ -26,23 +26,31 @@ const Post = ({
       </header>
       <div className="content">
         {post}
-        {forDisabled && forDisabled === createdBy && (
-          <footer className="actions">
-            <Link
-              to={
-                fromWhen === true ? `../edit-post/${_id}` : `edit-post/${_id}`
-              }
-              className="btn edit-btn"
-            >
-              Edit
-            </Link>
-            <Form method="post" action={`../delete-post/${_id}`}>
-              <button type="submit" className="btn delete-btn">
-                Delete
-              </button>
-            </Form>
-          </footer>
-        )}
+        {forDisabled === false ||
+          (forDisabled === createdBy && (
+            <footer className="actions">
+              <Link
+                to={
+                  fromWhen === true ? `../edit-post/${_id}` : `edit-post/${_id}`
+                }
+                className="btn edit-btn"
+              >
+                Edit
+              </Link>
+              <Form
+                method="post"
+                action={
+                  fromWhen === true
+                    ? `../delete-post/${_id}`
+                    : `delete-post/${_id}`
+                }
+              >
+                <button type="submit" className="btn delete-btn">
+                  Delete
+                </button>
+              </Form>
+            </footer>
+          ))}
       </div>
     </Wrapper>
   );

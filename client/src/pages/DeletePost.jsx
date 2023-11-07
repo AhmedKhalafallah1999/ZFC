@@ -1,6 +1,14 @@
-const DeletePost = () => {
-  return (
-    <div>DeletePost</div>
-  )
-}
-export default DeletePost
+import { toast } from "react-toastify";
+import customFetch from "../utils/customFetch";
+import { redirect } from "react-router-dom";
+
+export const action = async ({ params }) => {
+  try {
+    await customFetch.delete(`/posts/delete-post/${params.id}`);
+    toast.success("Post Deleted");
+    return redirect("/dashboard");
+  } catch (error) {
+    toast.error(error?.response?.data?.msg);
+    return redirect("/dashboard");
+  }
+};

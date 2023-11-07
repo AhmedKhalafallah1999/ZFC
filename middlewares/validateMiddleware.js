@@ -46,7 +46,7 @@ export const validateRegister = validateHandler([
     .notEmpty()
     .withMessage("name is required")
     .trim()
-    .isLength({ min: 6, max: 12 })
+    .isLength({ min: 6, max: 20 })
     .withMessage("Please make your name between 6 to 12 charecters"),
   body("email")
     .notEmpty()
