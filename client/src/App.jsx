@@ -20,6 +20,8 @@ import { action as ActionAddPost } from "./pages/AddPost";
 import { loader as LoaderEditPost } from "./pages/EditPost";
 import { action as ActionUpdatePost } from "./pages/EditPost";
 import { action as ActionDeletePost } from "./pages/DeletePost";
+import { loader as LoaderAppStats } from "./pages/Admin";
+import { action as ActionProfile } from "./pages/Profile";
 import "./App.css";
 const router = createBrowserRouter([
   {
@@ -55,10 +57,12 @@ const router = createBrowserRouter([
           {
             path: "admin",
             element: <Adimn />,
+            loader: LoaderAppStats,
           },
           {
             path: "profile",
             element: <Profile />,
+            action: ActionProfile,
           },
           {
             path: "delete-post/:id",

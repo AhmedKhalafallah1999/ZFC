@@ -11,7 +11,22 @@ import { authinticatedUser } from "./middlewares/authMiddleware.js";
 import userRouter from "./routes/userRouter.js";
 dotenv.config();
 
+// public
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import path from "path";
+// cloudinary
+import cloudinary from "cloudinary";
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_secret: process.env.API_SECRET,
+  api_key: process.env.API_KEY,
+});
+
 const app = express();
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.resolve(__dirname, "./public")));
 
 app.use(express.json());
 if (process.env.NODE_ENV === "development") {

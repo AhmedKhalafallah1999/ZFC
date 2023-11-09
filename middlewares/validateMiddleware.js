@@ -85,13 +85,8 @@ export const validateUpdateUserInput = validateHandler([
     .notEmpty()
     .withMessage("email is required")
     .isEmail()
-    .withMessage("invalid email format")
-    .custom(async (email, { req }) => {
-      const user = await user.findOne({ email });
-      if (user && user._id.toString() !== req.user.userId) {
-        throw new Error("email already exists");
-      }
-    }),
+    .withMessage("invalid email format"),
   body("lastName").notEmpty().withMessage("last name is required"),
   body("location").notEmpty().withMessage("location is required"),
-]);
+  body("bio").notEmpty().withMessage("bio is required"),
+]); 

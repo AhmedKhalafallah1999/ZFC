@@ -17,13 +17,10 @@ let posts = [
   },
 ];
 export const getAllPosts = async (req, res) => {
-  const userPosts = await PostModel.find({});
+  const userPosts = await PostModel.find().populate("createdBy");
+  // console.log(userPosts);
   res.status(StatusCodes.OK).json({ userPosts });
 };
-// export const getAllFansPosts = async (req, res) => {
-//   const fansPosts = await PostModel.find({});
-//   res.status(StatusCodes.OK).json({ fansPosts });
-// };
 export const addPostController = async (req, res) => {
   req.body.createdBy = req.user.userId;
   const postDB = await PostModel.create(req.body);

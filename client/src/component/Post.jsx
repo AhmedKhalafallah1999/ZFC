@@ -2,6 +2,8 @@ import { Link, Form } from "react-router-dom";
 import Wrapper from "../assets/wrappers/Post";
 import day from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import { FaGrinHearts } from "react-icons/fa";
+
 day.extend(advancedFormat);
 
 const Post = ({
@@ -15,19 +17,33 @@ const Post = ({
   forDisabled = false,
 }) => {
   const date = day(createdAt).format("MMM Do, YYYY");
+  // console.log(createdBy);
   return (
     <Wrapper>
       <header>
-        <div className="main-icon">{name}</div>
+        <div className="user-info">
+          {createdBy.avatar ? (
+            <img src={createdBy.avatar} alt="profile" className="img-profile" />
+          ) : (
+            // <FaGrinHearts className="img" />
+            <img
+              src="../../public/favicon.jpg"
+              alt="profile"
+              className="img-profile"
+            />
+          )}
+          <div className="main-icon">{createdBy.name}</div>
+        </div>
         <div className="info">
           <h5>{bio}</h5>
           <p>{date}</p>
         </div>
       </header>
+
       <div className="content">
         {post}
         {forDisabled === false ||
-          (forDisabled === createdBy && (
+          (forDisabled === createdBy._id && (
             <footer className="actions">
               <Link
                 to={

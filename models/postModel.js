@@ -10,7 +10,7 @@ const PostSchema = new mongoose.Schema(
     bio: String,
     createdBy: {
       type: mongoose.Types.ObjectId,
-      ref: "User",
+      ref: "user",
     },
   },
   { timestamps: true }

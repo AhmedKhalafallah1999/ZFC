@@ -14,6 +14,7 @@ export const loader = async () => {
     };
     return postsWithCurrentUser;
   } catch (error) {
+    console.log(error);
     return redirect("/");
   }
 };
@@ -22,7 +23,6 @@ const DashboardLayout = () => {
   const [showToggleSideBar, setToggleSideBar] = useState(false);
   const toggleSideBar = () => {
     setToggleSideBar(!showToggleSideBar);
-    console.log(showToggleSideBar);
   };
   const { posts, userDemo } = useLoaderData();
   return (

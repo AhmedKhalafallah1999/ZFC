@@ -3355,7 +3355,7 @@ export const getCurrentUser = async (req, res) => {
 };
 ```
 
-******\*\*******\*\*\*\*******\*\*******\*\*\*\*******\*\*******\*\*\*\*******\*\******* Done before
+**\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\***\*\*\*\***\*\***\*\***\*\*** Done before
 
 #### Remove Password
 
@@ -3416,7 +3416,7 @@ export const updateUser = async (req, res) => {
 }
 ```
 
-**************\*\*\*\***************\*\*\***************\*\*\*\*************** Done Before
+******\*\*******\*\*\*\*******\*\*******\*\*\*******\*\*******\*\*\*\*******\*\******* Done Before
 
 #### Application Stats
 
@@ -3633,7 +3633,7 @@ App.jsx
 },
 ```
 
-****************************\*\*\***************************** Tomorrow
+************\*\*\*\*************\*\*\*************\*\*\*\************* Tomorrow
 
 #### Register User
 
@@ -3744,7 +3744,9 @@ export const action = async ({ request }) => {
   }
 };
 ```
-**************************************************************  
+
+---
+
 #### Login User
 
 ```js
@@ -4047,7 +4049,9 @@ export const action = async ({ request }) => {
   }
 };
 ```
-*********************************************
+
+---
+
 #### Pending Class and Redirect
 
 wrappers/BigSidebar.js
@@ -4456,7 +4460,9 @@ const Wrapper = styled.article`
 
 export default Wrapper;
 ```
-***********************************************7/11/2023
+
+**********************\*\*\***********************7/11/2023
+
 #### Edit Job - Setup
 
 Job.jsx
@@ -4630,6 +4636,7 @@ export async function action({ params }) {
 }
 ```
 
+****************\*\*****************9/11/2023
 App.jsx
 
 ```js
@@ -4821,6 +4828,8 @@ const Wrapper = styled.article`
 export default Wrapper;
 ```
 
+---
+
 #### Avatar Image
 
 - get two images from pexels
@@ -4842,6 +4851,8 @@ app.use(express.static(path.resolve(__dirname, "./public")));
 ```
 
 - http://localhost:5100/imageName
+
+---
 
 #### Profile Page - Initial Setup
 
@@ -5037,6 +5048,7 @@ import { promises as fs } from "fs";
 export const updateUser = async (req, res) => {
   const newUser = { ...req.body };
   delete newUser.password;
+  
   if (req.file) {
     const response = await cloudinary.v2.uploader.upload(req.file.path);
     await fs.unlink(req.file.path);
@@ -6885,5 +6897,7 @@ const apiLimiter = rateLimiter({
 router.post("/register", apiLimiter, validateRegisterInput, register);
 router.post("/login", apiLimiter, validateLoginInput, login);
 ```
-#   Z F C  
+
+#   Z F C 
+ 
  

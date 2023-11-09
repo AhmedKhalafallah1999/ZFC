@@ -17,6 +17,8 @@ const UserSchema = new mongoose.Schema({
     enum: ["user", "admin"],
   },
   bio: String,
+  avatar: String,
+  avatarPublicId: String,
 });
 UserSchema.methods.RemovePassword = function () {
   const obj = this.toObject();

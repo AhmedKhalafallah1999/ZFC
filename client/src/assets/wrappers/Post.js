@@ -15,9 +15,8 @@ const Wrapper = styled.article`
   }
   .main-icon {
     width: fit-content;
-    padding: 1rem;
-    height: 40px;
-    
+    padding: 0.5rem;
+    height: fit-content;
     display: grid;
     place-items: center;
     background: var(--primary-500);
@@ -26,11 +25,18 @@ const Wrapper = styled.article`
     font-weight: 700;
     text-transform: capitalize;
     color: var(--white);
-    margin-right: 2rem;
+    margin-right: 3rem;
+    max-width: 120px;
+    width: 120px;
+  }
+  .user-info {
+    /* margin-left: 4rem; */
   }
   .info {
     h5 {
       margin-bottom: 0.5rem;
+      right: 0;
+      display: flex;
     }
     p {
       margin: 0;
@@ -77,6 +83,11 @@ const Wrapper = styled.article`
   }
   .edit-btn {
     margin-right: 0.5rem;
+  }
+  .img-profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
   }
 `;
 
