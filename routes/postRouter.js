@@ -11,9 +11,20 @@ import {
   validateCreatePostInputs,
   validateIdParam,
 } from "../middlewares/validateMiddleware.js";
+import { checkForTestUser } from "../middlewares/authMiddleware.js";
 router.get("/get-all-posts", getAllPosts);
-router.post("/add-post", validateCreatePostInputs, addPostController);
+router.post(
+  "/add-post",
+  validateCreatePostInputs,
+  checkForTestUser,
+  addPostController
+);
 router.get("/get-post/:id", validateIdParam, getSinglePost);
-router.patch("/edit-post/:id", validateIdParam, editPost);
-router.delete("/delete-post/:id", validateIdParam, deletePost);
+router.patch("/edit-post/:id", validateIdParam, checkForTestUser, editPost);
+router.delete(
+  "/delete-post/:id",
+  validateIdParam,
+  checkForTestUser,
+  deletePost
+);
 export default router;

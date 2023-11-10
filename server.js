@@ -7,7 +7,10 @@ import authRouter from "./routes/authRouter.js";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import errorHandlerMiddleware from "./middlewares/errorHandlerMiddleware.js";
-import { authinticatedUser } from "./middlewares/authMiddleware.js";
+import {
+  authinticatedUser,
+  checkForTestUser,
+} from "./middlewares/authMiddleware.js";
 import userRouter from "./routes/userRouter.js";
 dotenv.config();
 
