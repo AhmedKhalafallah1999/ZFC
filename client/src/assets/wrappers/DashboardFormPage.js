@@ -29,7 +29,10 @@ const Wrapper = styled.section`
     display: grid;
     place-items: center;
   }
-
+  .centered {
+    /* display: block; */
+    text-align: center;
+  }
   @media (min-width: 992px) {
     .form-center {
       grid-template-columns: 1fr 1fr;

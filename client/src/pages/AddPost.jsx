@@ -2,7 +2,7 @@ import { FormRow } from "../component";
 import Wrapper from "../assets/wrappers/DashboardFormPage";
 import { Form, useNavigation } from "react-router-dom";
 import { toast } from "react-toastify";
-import { PostsContainer, SearchContainer } from "../component/index";
+import { PostsContainer } from "../component/index";
 import customFetch from "../utils/customFetch";
 import { useDashboardContext } from "./DashboardLayout";
 let name, bio;
@@ -50,7 +50,6 @@ const AddPost = () => {
           </button>
         </div>
       </Form>
-      <SearchContainer />
       <PostsContainer />
     </Wrapper>
   );

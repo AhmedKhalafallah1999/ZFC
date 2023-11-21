@@ -4,6 +4,7 @@ const FormRow = ({
   defaultValue = "",
   type,
   placeholder = "",
+  onChange,
 }) => {
   return (
     <div className="form-row">
@@ -17,6 +18,7 @@ const FormRow = ({
         placeholder={placeholder}
         id={name}
         className="form-input"
+        onChange={onChange}
       ></input>
     </div>
   );

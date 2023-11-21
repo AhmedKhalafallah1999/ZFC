@@ -5644,7 +5644,7 @@ export const getAllJobs = async (req, res) => {
     .json({ totalJobs, numOfPages, currentPage: page, jobs });
 };
 ```
-
+*****************************
 #### Search Container
 
 - setup log in AllJobs loader

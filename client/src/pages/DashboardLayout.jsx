@@ -4,10 +4,13 @@ import Wrapper from "../assets/wrappers/Dashboard";
 import { useContext, createContext, useState } from "react";
 import customFetch from "../utils/customFetch";
 const DashoardContext = createContext();
-export const loader = async () => {
+export const loader = async ({ request }) => {
+  const params = Object.fromEntries([
+    ...new URL(request.url).searchParams.entries(),
+  ]);
   try {
     const currentUser = await customFetch.get("/users/current-user");
-    const posts = await customFetch.get("/posts/get-all-posts");
+    const posts = await customFetch.get("/posts/get-all-posts", { params });
     const postsWithCurrentUser = {
       posts: posts.data.userPosts,
       userDemo: currentUser.data,

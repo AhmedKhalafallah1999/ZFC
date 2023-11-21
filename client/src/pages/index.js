@@ -12,3 +12,5 @@ export { default as Register } from "./Register";
 export { default as Stats } from "./Stats";
 export { default as HomeLayout } from "./HomeLayout";
 export { default as AddPost } from "./AddPost";
+export { default as ResetPassword } from "./ResetPassword";
+export { default as EnterNewPassword } from "./EnterNewPassword";

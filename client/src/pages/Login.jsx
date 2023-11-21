@@ -10,8 +10,10 @@ export const action = async ({ request }) => {
   try {
     await customFetch.post("/auth/login", data);
     toast.success("Login success...");
+
     return redirect("/dashboard");
   } catch (error) {
+    console.log(error);
     return toast.error(error?.response?.data?.msg);
   }
 };
@@ -27,6 +29,7 @@ const Login = () => {
       toast.success("take a test drive");
       navigate("/dashboard");
     } catch (error) {
+      console.log(error);
       toast.error(error?.response?.data?.msg);
     }
   };
@@ -43,6 +46,12 @@ const Login = () => {
           type="password"
           labelText="Password"
         />
+        <p>
+          {" "}
+          <Link to={"/reset"} className="member-btn centered">
+            Forget your password
+          </Link>
+        </p>
         <button type="submit" className="btn btn-block">
           submit
         </button>
@@ -55,6 +64,7 @@ const Login = () => {
             Register
           </Link>
         </p>
+        <p></p>
       </Form>
     </Wrapper>
   );

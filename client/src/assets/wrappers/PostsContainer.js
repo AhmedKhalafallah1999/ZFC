@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.section`
+  /* justify-content: center; */
   margin-top: 4rem;
   h2 {
     text-transform: none;

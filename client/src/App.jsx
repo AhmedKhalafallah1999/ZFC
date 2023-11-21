@@ -12,6 +12,8 @@ import {
   AllFans,
   AddPost,
   Error,
+  ResetPassword,
+  EnterNewPassword,
 } from "./pages/index";
 import { action as actionRegister } from "./pages/Register";
 import { action as actionLogin } from "./pages/Login";
@@ -22,6 +24,8 @@ import { action as ActionUpdatePost } from "./pages/EditPost";
 import { action as ActionDeletePost } from "./pages/DeletePost";
 import { loader as LoaderAppStats } from "./pages/Admin";
 import { action as ActionProfile } from "./pages/Profile";
+import { action as ActionResetPassword } from "./pages/ResetPassword";
+import { action as ActionEnterNewPassword } from "./pages/EnterNewPassword";
 import "./App.css";
 const router = createBrowserRouter([
   {
@@ -42,6 +46,16 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login />,
         action: actionLogin,
+      },
+      {
+        path: "/reset",
+        element: <ResetPassword />,
+        action: ActionResetPassword,
+      },
+      {
+        path: "/reset/:token",
+        element: <EnterNewPassword />,
+        action: ActionEnterNewPassword,
       },
       {
         path: "/dashboard",

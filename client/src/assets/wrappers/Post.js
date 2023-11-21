@@ -4,6 +4,7 @@ const Wrapper = styled.article`
   background: var(--background-secondary-color);
   border-radius: var(--border-radius);
   display: grid;
+  /* width: 50%; */
   grid-template-rows: 1fr auto;
   box-shadow: var(--shadow-2);
   header {
@@ -47,6 +48,7 @@ const Wrapper = styled.article`
   }
   .content {
     padding: 1rem 1.5rem;
+    /* width: 80%; */
   }
   .content-center {
     display: grid;

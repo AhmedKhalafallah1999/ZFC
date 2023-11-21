@@ -15,10 +15,10 @@ const Landing = () => {
             Zamalek <span>Fans</span> Community
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-            tenetur enim veritatis, nisi ratione culpa incidunt architecto
-            voluptatem aliquid tempora, beatae labore animi sunt non voluptate
-            sapiente fugit quo molestias.
+            الزمالك أحد أكثر الأندية نجاح في تاريخ كرة القدم المصرية من حيث عدد
+            البطولات المحلية، فقد فاز بأربعة عشر لقب دوري، وثمانية وعشرين لقب في
+            كأس مصر وأربعة ألقاب من كأس السوبر وأربعة عشر لقب في دوري منطقة
+            القاهرة واثنين في كأس السلطان حسين{" "}
           </p>
           <Link to={"/register"} className="btn register-link">
             Register

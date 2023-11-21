@@ -89,4 +89,11 @@ export const validateUpdateUserInput = validateHandler([
   body("lastName").notEmpty().withMessage("last name is required"),
   body("location").notEmpty().withMessage("location is required"),
   body("bio").notEmpty().withMessage("bio is required"),
-]); 
+]);
+export const validatePassword = validateHandler([
+  body("password")
+    .notEmpty()
+    .withMessage("password is required")
+    .isLength({ min: 8 })
+    .withMessage("password must be at least 8 characters long"),
+]);
