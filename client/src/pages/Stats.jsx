@@ -40,6 +40,7 @@ const Stats = () => {
             name="Tables"
             labelText="Tables"
             defaultValue="ترتيب الدوري الفرنسي"
+            
           />
           {/* {leagues.map((league, index) => {
             return (

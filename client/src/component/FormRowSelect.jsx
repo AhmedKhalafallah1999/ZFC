@@ -42,7 +42,7 @@ const FormRowSelect = ({
     }
   };
   return (
-    <div className="custom">
+    <div className={name === "Tables" ? "custom" : ""}>
       <header>
         <div className="form-row">
           <label htmlFor={name} className="form-label">

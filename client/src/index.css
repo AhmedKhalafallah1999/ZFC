@@ -334,9 +334,11 @@ button:disabled {
   flex-direction: column;
   display: flex;
   row-gap: 3rem;
+  /* width: 50%; */
   /* margin: 0 auto; */
 }
-.custom-section{
+.custom-section {
   width: 100%;
   margin: 0 auto;
+  display: flex;
 }
