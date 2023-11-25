@@ -7,6 +7,7 @@ export { default as Navbar } from "./Navbar.jsx";
 export { default as SearchContainer } from "./SearchContainer.jsx";
 export { default as PostsContainer } from "./PostsContainer.jsx";
 export { default as Post } from "./Post.jsx";
+export { default as ReactionBox } from "./reaction.jsx";
 // export { default as StatItem } from "./StatItem.jsx";
 // export { default as ChartsContainer } from "./ChartsContainer.jsx";
 // export { default as StatsContainer } from "./StatsContainer.jsx";

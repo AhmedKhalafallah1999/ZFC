@@ -75,6 +75,8 @@ const Wrapper = styled.article`
     margin-top: 1rem;
     display: flex;
     align-items: center;
+    /* justify-content: center; */
+    
   }
   .edit-btn,
   .delete-btn {

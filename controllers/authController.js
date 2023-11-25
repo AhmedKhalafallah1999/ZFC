@@ -83,7 +83,7 @@ export const enterNewPassword = async (req, res, next) => {
           .json({ success: true, msg: "Password successfuly updated" });
       }
     });
-  }  else {
+  } else {
     res
       .status(StatusCodes.BAD_REQUEST)
       .json({ success: false, msg: "session expired" });

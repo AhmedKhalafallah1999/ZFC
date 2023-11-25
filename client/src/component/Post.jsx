@@ -3,6 +3,7 @@ import Wrapper from "../assets/wrappers/Post";
 import day from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import { FaGrinHearts } from "react-icons/fa";
+import { ReactionBox } from "./index";
 
 day.extend(advancedFormat);
 
@@ -42,31 +43,36 @@ const Post = ({
 
       <div className="content">
         {post}
-        {forDisabled === false ||
-          (forDisabled === createdBy._id && (
-            <footer className="actions">
-              <Link
-                to={
-                  fromWhen === true ? `../edit-post/${_id}` : `edit-post/${_id}`
-                }
-                className="btn edit-btn"
-              >
-                Edit
-              </Link>
-              <Form
-                method="post"
-                action={
-                  fromWhen === true
-                    ? `../delete-post/${_id}`
-                    : `delete-post/${_id}`
-                }
-              >
-                <button type="submit" className="btn delete-btn">
-                  Delete
-                </button>
-              </Form>
-            </footer>
-          ))}
+        <footer className="actions">
+          {/* <ReactionBox /> */}
+          {forDisabled === false ||
+            (forDisabled === createdBy._id && (
+              <>
+                <Link
+                  to={
+                    fromWhen === true
+                      ? `../edit-post/${_id}`
+                      : `edit-post/${_id}`
+                  }
+                  className="btn edit-btn"
+                >
+                  Edit
+                </Link>
+                <Form
+                  method="post"
+                  action={
+                    fromWhen === true
+                      ? `../delete-post/${_id}`
+                      : `delete-post/${_id}`
+                  }
+                >
+                  <button type="submit" className="btn delete-btn">
+                    Delete
+                  </button>
+                </Form>
+              </>
+            ))}
+        </footer>
       </div>
     </Wrapper>
   );
